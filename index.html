@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <body style="text-align: center;">
+    <Form>
+        <label for="">Your Name</label><br>
+        <input type="text" id="user_name"><br><br>
+        <label for="">Your Email</label><br>
+        <input type="email" id="user_email"><br><br>
+         <label for="">Your Phone Number</label><br>
+        <input type="cell" id="user_cell"><br><br>
+         <label for="">Your Address</label><br>
+       <textarea name="" id="user_area"></textarea><br><br>
+       <input type="checkbox" id="agree">I agree to the terms <br><br>
+       <button onclick="test()" type="submit">Submit</button>
+    </Form>
+
+    <h2 style="text-align: center;"><span id="date"></span> &nbsp;&nbsp;&nbsp;&nbsp; <span id="time"></span></h2>
+     <script>
+      function test() {
+        var a = document.getElementById("user_name").value.trim();
+        var b = document.getElementById("user_cell").value.trim();
+        var c = document.getElementById("user_email").value.trim();
+        var d = document.getElementById("user_area").value.trim();
+        var e = document.getElementById("agree");
+
+        if (a == "" || b == "" || c == "" || d == "" || !e.checked) {
+          window.alert("invalid input");
+        } else {
+          window.alert("success input");
+        }
+      }
+
+      document.getElementById('date').innerHTML = new Date().toLocaleDateString()
+       
+    setInterval(() =>  document.getElementById('time').innerHTML = new Date().toLocaleTimeString())
+      
+    </script>
+</body>
+</html>
